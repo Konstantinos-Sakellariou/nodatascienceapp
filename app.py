@@ -1,4 +1,5 @@
 import os
+from glob import glob
 from joblib import dump
 from pandas_profiling import ProfileReport
 from pycaret.regression import setup as setup_regr
@@ -371,4 +372,4 @@ def delete_eda_report(n_clicks):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
