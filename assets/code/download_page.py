@@ -1,9 +1,7 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
-import os
-from glob import glob
 
-download_page = html.Div([
+download_page = html.Div(id="update_download_page", children=[
             html.H2("Download the best model"),
             html.P(
                 "By clicking on the download button below you can download the best"
@@ -15,11 +13,12 @@ download_page = html.Div([
                     html.H6("Select your model to download"),
                     html.Div([dcc.Dropdown(id='models',
                                            placeholder="Select your model...",
-                                           options=[{'label': i, 'value': i} for i in os.listdir("assets/models")],
+                                           options=[],
                                            style={"background-color": "#CAECD8", "width": "100%"},
                                            multi=False,
-                                           persistence=True,
-                                           persistence_type='session'),
+                                           # persistence=True,
+                                           # persistence_type='session'
+                                           ),
                               ], style={"background-color": "white", "width": "100%"}),
                     html.Br(),
                     dbc.Button(children=[html.I(className="fa-cloud-download"), "Download Model"],
@@ -33,12 +32,12 @@ download_page = html.Div([
                     html.H6("Select your report to download"),
                     html.Div([dcc.Dropdown(id='reports',
                                            placeholder="Select your report...",
-                                           options=[{'label': i, 'value': i} for i in
-                                                    os.listdir("assets/profile_reports")],
+                                           options=[],
                                            style={"background-color": "#CAECD8", "width": "100%"},
                                            multi=False,
-                                           persistence=True,
-                                           persistence_type='session'),
+                                           # persistence=True,
+                                           # persistence_type='session'
+                                           ),
                               ], style={"background-color": "white", "width": "100%"}),
                     html.Br(),
                     dbc.Button(children=[html.I(className="fa-cloud-download"), "Download Report"],

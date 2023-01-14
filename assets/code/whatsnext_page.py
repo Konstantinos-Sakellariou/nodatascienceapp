@@ -1,4 +1,7 @@
 from dash import html
+import os
+
+#os.chdir(os.path.normpath(os.path.join(os.getcwd(), "..", "..")))
 
 whatsnext_page = html.Div(id="steps",
                           children=[html.Div([html.Div([

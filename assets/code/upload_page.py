@@ -100,7 +100,7 @@ def return_output_data(df, filename):
                        value="  Bar Plot",
                        inline=False,
                        labelStyle={"display": "block"},
-                       nodatascience_app_envstyle={"width": "50%"}),
+                       style={"width": "50%"}),
         html.Br(),
         dbc.Button(children=[html.I(className="fa fa mr-2"), "Create Graph"],
                    id="submit-button",

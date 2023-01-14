@@ -17,7 +17,7 @@ sidebar = html.Div(
                 dbc.NavLink("Upload your Dataset", href="/upload_page", active="exact"),
                 dbc.NavLink("Automatic Exploratory Data Analysis", href="/eda_page", active="exact"),
                 dbc.NavLink("Data Modelling Options", href="/modelling_page", active="exact", id="datamodeloption"),
-                dbc.NavLink("Download Options", href="/download_page", active="exact"),
+                dbc.NavLink("Download Options", href="/download_page", active="exact", id="refreshdownload", n_clicks=0),
                 dbc.NavLink("What's next?", href="/whatsnext_page", active="exact", id="whatisnext", n_clicks=0),
                 html.Hr(),
                 html.Div(
@@ -41,7 +41,7 @@ sidebar = html.Div(
                         html.A(dbc.Button(children=[html.I(className="fa-brands fa-github", style={"color": "black"}),
                                                     "GitHub"], id="opengit", style={'width': '100%'}),
                                target="_blank",
-                               href="https://github.com/Konstantinos-Sakellariou")]
+                               href="https://github.com/Konstantinos-Sakellariou/nodatascienceapp")]
                 ),
             ],
             vertical=True,
