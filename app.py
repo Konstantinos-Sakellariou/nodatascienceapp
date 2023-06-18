@@ -322,6 +322,26 @@ def update_output_modelling(button_click, ml_type, target_column, data, filename
 
 # ------- DOWNLOAD PAGE CALLBACKS -------
 # ---------------------------------------
+@app.callback(Output('models', 'options'),
+              Input('refreshdownload', 'n_clicks')
+              )
+def update_download_models(n_clicks):
+    if n_clicks:
+        model_names = [{'label': i, 'value': i} for i in os.listdir("assets/models")]
+        return model_names
+    else:
+        return []
+
+
+@app.callback(Output('reports', 'options'),
+              Input('refreshdownload', 'n_clicks')
+              )
+def update_download_reports(n_clicks):
+    if n_clicks:
+        report_names = [{'label': i, 'value': i} for i in os.listdir("assets/profile_reports")]
+        return report_names
+    else:
+        return []
 
 
 @app.callback(Output('download-model', 'data'),
